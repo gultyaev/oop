@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="ru">
 <head>
-		<meta charset="UTF-8" />
-		<meta name="viewport"
-					content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>ООП</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ООП</title>
 </head>
 <body>
 
@@ -72,79 +72,79 @@
   }
 </style>
 
-		<section class="wrapper">
-				<form action="action.php">
-						<div class="inp">
-								<label><input class="inp-spec setName" type="checkbox" />Указать имя</label>
-						</div>
-						<div class="inp">
-								<input type="text" class="name" />
-						</div>
-						<div class="inp">
-								<label><input type="checkbox" class="inp-spec setHair" />Цвет волос</label>
-						</div>
-						<div class="inp">
-								<label><input class="inp-spec hair" type="radio" name="hair" value="white" />Блондин</label>
-								<label><input class="inp-spec hair" type="radio" name="hair" value="black" />Брюнет</label>
-								<label><input class="inp-spec hair" type="radio" name="hair" value="orange" />Огонь</label>
-						</div>
-						<div class="inp">
-								<label><input type="checkbox" class="inp-spec setLogo" />Лого на футболке</label>
-						</div>
-						<input type="submit" value="Добавить персонажа" class="block" id="subm" />
-				</form>
+  <section class="wrapper">
+    <form action="action.php">
+      <div class="inp">
+        <label><input class="inp-spec setName" type="checkbox" />Указать имя</label>
+      </div>
+      <div class="inp">
+        <input type="text" class="name" />
+      </div>
+      <div class="inp">
+        <label><input type="checkbox" class="inp-spec setHair" />Цвет волос</label>
+      </div>
+      <div class="inp">
+        <label><input class="inp-spec hair" type="radio" name="hair" value="white" />Блондин</label>
+        <label><input class="inp-spec hair" type="radio" name="hair" value="black" />Брюнет</label>
+        <label><input class="inp-spec hair" type="radio" name="hair" value="orange" />Огонь</label>
+      </div>
+      <div class="inp">
+        <label><input type="checkbox" class="inp-spec setLogo" />Лого на футболке</label>
+      </div>
+      <input type="submit" value="Добавить персонажа" class="block" id="subm" />
+    </form>
 
-				<div class="container">
-					<svg height="200" width="100" class="char">
-            <!--Голова-->
-            <circle class="char-head" cx="50" cy="46" r="25" />
-            <!--Глаза-->
-            <circle class="char-eyes" cx="40" cy="40" r="5" />
-            <circle class="char-eyes" cx="60" cy="40" r="5" />
-            <!--Причёска-->
-            <path class="char-hair" d="M30,30 l 40,0 l 0,-10 c -20,-10 -40,0 -40,0 z" />
-            <!--Рот-->
-            <rect class="char-mouth" x="40" y="55" width="20" height="5" />
-            <!--Руки-->
-            <rect class="char-hands" x="5" y="75" width="90" height="15" />
-            <!--Туловище-->
-            <rect class="char-body" x="24" y="71" width="52" height="50" />
-            <!--Логотип-->
-            <rect class="char-logo" x="40" y="87" width="20" height="20" />
-            <!--Ноги-->
-            <polyline class="char-legs" points="33.33333,200 33.33333,130 66.66666,130 66.66666,200" />
-					</svg>
-				</div>
+      <div class="container">
+        <svg height="200" width="100" class="char">
+          <!--Голова-->
+          <circle class="char-head" cx="50" cy="46" r="25" />
+          <!--Глаза-->
+          <circle class="char-eyes" cx="40" cy="40" r="5" />
+          <circle class="char-eyes" cx="60" cy="40" r="5" />
+          <!--Причёска-->
+          <path class="char-hair" d="M30,30 l 40,0 l 0,-10 c -20,-10 -40,0 -40,0 z" />
+          <!--Рот-->
+          <rect class="char-mouth" x="40" y="55" width="20" height="5" />
+          <!--Руки-->
+          <rect class="char-hands" x="5" y="75" width="90" height="15" />
+          <!--Туловище-->
+          <rect class="char-body" x="24" y="71" width="52" height="50" />
+          <!--Логотип-->
+          <rect class="char-logo" x="40" y="87" width="20" height="20" />
+          <!--Ноги-->
+          <polyline class="char-legs" points="33.33333,200 33.33333,130 66.66666,130 66.66666,200" />
+        </svg>
+      </div>
 
-		</section>
+  </section>
 
 <script>
-	"use strict";
-	function setClass() {
-		var name = document.querySelector('.name').value,
-				hair = (function () {
-					var h = [].forEach.call(document.querySelectorAll('.hair'), function (el) {
-					  if (el.checked) {
-					    return el.value;
-						}
-					});
-					return h;
-        })();
-		console.log(hair);
-	}
+  "use strict";
+  function setClass() {
+    var name = document.querySelector('.name').value,
+      hair = (function () {
+        var h = [].forEach.call(document.querySelectorAll('.hair'), function (el) {
+          if (el.checked) {
+            return el.value;
+            }
+        });
+        return h;
+    })();
+    console.log(hair);
+  }
 
-	function getOptions(options) {
+  function getOptions(options) {
 
-	}
+  }
 
-	function addToContainer(el) {
+  function addToContainer(el) {
 
-	}
+  }
 
-	document.getElementById('subm').addEventListener('click', function(e) {
-		e.preventDefault();
-		setClass();
-	});
+  document.getElementById('subm').addEventListener('click', function(e) {
+    e.preventDefault();
+    setClass();
+  });
 </script>
 </body>
 </html>
