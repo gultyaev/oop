@@ -129,13 +129,13 @@
       var el = function () {
         var selEl;
         [].forEach.call(h, function (e) {
-          if (e.selected) {
-            selEl = e.value;
+          if (this.selected) {
+            selEl = this.value;
           }
         });
         return selEl;
-      };
-      document.querySelector('.char-hair').style.fill = el;
+      }
+      document.querySelector('.char-hair').style.fill = (el)();
     });
   });
   function setClass() {
