@@ -123,21 +123,17 @@
   function changeHair() {
 
   }
+  //Отлавливаем смену волос
   var h = document.querySelectorAll('.hair');
-  [].forEach.call(h, function () {
-    addEventListener('click', function () {
-      var el = function () {
-        var selEl;
-        [].forEach.call(h, function (e) {
-          if (this.selected) {
-            selEl = this.value;
-          }
-        });
-        return selEl;
+  [].forEach.call(h, function (elem) {
+    elem.addEventListener('click', function () {
+      function isSelected(el) {
+        return el.selected;
       }
-      document.querySelector('.char-hair').style.fill = (el)();
+      document.querySelector('.char-hair').style.fill = [].find.call(h, isSelected());
     });
   });
+  //Определить класс
   function setClass() {
     var name = document.querySelector('.name').value,
       hair = (function () {
