@@ -6,102 +6,101 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>ООП</title>
+  <style>
+    html, body, section {
+      padding: 0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    form {
+      width: 450px;
+      font-size: 0;
+    }
+    .container {
+      margin-top: 1em;
+    }
+    .inp {
+      display: inline-block;
+      width: 150px;
+      height: 30px;
+      line-height: 20px;
+      font-size: 1rem;
+    }
+    .inp:nth-child(2n) {
+      width: 300px;
+    }
+    .inp-spec {
+      vertical-align: baseline;
+    }
+    .block {
+      display: block;
+      background: #fff linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3));
+      border: 1px solid black;
+      border-radius: 5px;
+      outline: none;
+    }
+    .block:active {
+      background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0));
+      color: rgba(0,0,0,0.69);
+    }
+    div.char {
+      margin: 20px;
+      display: inline-block;
+      position: relative;
+      height: 200px;
+      width: 100px;
+    }
+    div.char:before,
+    div.char:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    svg.char {
+      width: 100px;
+      height: 200px;
+    }
+    /*Char style*/
+    .char-hair {
+      fill: yellow;
+    }
+    .char-eyes,
+    .char-mouth,
+    .char-hands {
+      fill: black;
+    }
+    .char-head {
+      fill: #fcca72;
+    }
+    .char-body {
+      fill: blue;
+    }
+    .char-logo {
+      fill: transparent;
+    }
+    .char-legs {
+      fill: white;
+      stroke: black;
+      stroke-width: 18
+    }
+    .setName,
+    .inp-hair {
+      visibility: hidden;
+    }
+    #subm {
+      outline: none;
+    }
+    .char-name {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      white-space: normal;
+      text-overflow: ellipsis;
+    }
+  </style>
 </head>
 <body>
-
-<style>
-  html, body, section {
-    padding: 0;
-  }
-	* {
-		box-sizing: border-box;
-	}
-  form {
-    width: 450px;
-    font-size: 0;
-  }
-  .container {
-    margin-top: 1em;
-  }
-  .inp {
-    display: inline-block;
-    width: 150px;
-    height: 30px;
-    line-height: 20px;
-    font-size: 1rem;
-  }
-  .inp:nth-child(2n) {
-    width: 300px;
-  }
-  .inp-spec {
-    vertical-align: baseline;
-  }
-  .block {
-    display: block;
-    background: #fff linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3));
-    border: 1px solid black;
-    border-radius: 5px;
-    outline: none;
-  }
-  .block:active {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0));
-    color: rgba(0,0,0,0.69);
-  }
-  div.char {
-    margin: 20px;
-    display: inline-block;
-    position: relative;
-    height: 200px;
-    width: 100px;
-  }
-  div.char:before,
-  div.char:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-  svg.char {
-    width: 100px;
-    height: 200px;
-  }
-  /*Char style*/
-  .char-hair {
-    fill: yellow;
-  }
-  .char-eyes,
-  .char-mouth,
-  .char-hands {
-    fill: black;
-  }
-  .char-head {
-    fill: #fcca72;
-  }
-  .char-body {
-    fill: blue;
-  }
-  .char-logo {
-    fill: transparent;
-  }
-  .char-legs {
-    fill: white;
-    stroke: black;
-    stroke-width: 18
-  }
-  .setName,
-  .inp-hair {
-    visibility: hidden;
-  }
-  #subm {
-    outline: none;
-  }
-  .char-name {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    white-space: normal;
-    text-overflow: ellipsis;
-  }
-</style>
 
 <section class="wrapper">
   <form action="action.php">
@@ -236,10 +235,10 @@
         name = document.createElement('p');
     //Add containers
     div.classList.add('char');
-    svg.classList.add('char');
     name.classList.add('char-name');
     svg.setAttribute('height','200');
     svg.setAttribute('width', '100');
+    svg.classList.add('char');
 
     name.innerHTML = el.name;
 
@@ -259,12 +258,12 @@
     legs.setAttribute('points','33.33333,200 33.33333,130 66.66666,130 66.66666,200');
 
     //Set user's styles
-    if (el.hair) {
+    /*if (el.hair) {
       hair.style.fill = el.hair;
     }
     if (el.logo) {
       logo.style.fill = el.logo;
-    }
+    }*/
 
     //Add to svg container
     svg.appendChild(head);
