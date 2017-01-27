@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>ООП</title>
   <style>
@@ -97,6 +97,7 @@
       text-align: center;
       white-space: normal;
       text-overflow: ellipsis;
+      overflow: hidden;
     }
   </style>
 </head>
@@ -189,7 +190,7 @@
 
   function getOptions(options) {
     var Char = {
-      name: "default",
+      name: "Default",
       hair: "yellow",
       logo: "transparent"
     }
@@ -212,7 +213,7 @@
       elem.setAttribute('x',x);
       elem.setAttribute('y',y);
       elem.setAttribute('width',w);
-      elem.setAttribute('heigth',h);
+      elem.setAttribute('height',h);
     }
     function circCreate(x,y,r,cl,elem) {
       elem.classList.add(cl);
@@ -222,16 +223,16 @@
     }
 
     var div = document.createElement('div'),
-        svg = document.createElement('svg'),
-        head = document.createElement('circle'),
-        leftEye = document.createElement('circle'),
-        rightEye = document.createElement('circle'),
-        hair = document.createElement('path'),
-        mouth = document.createElement('rect'),
-        hands = document.createElement('rect'),
-        body = document.createElement('rect'),
-        logo = document.createElement('rect'),
-        legs = document.createElement('polyline'),
+        svg = document.createElementNS("http://www.w3.org/2000/svg",'svg'),
+        head = document.createElementNS("http://www.w3.org/2000/svg",'circle'),
+        leftEye = document.createElementNS("http://www.w3.org/2000/svg",'circle'),
+        rightEye = document.createElementNS("http://www.w3.org/2000/svg",'circle'),
+        hair = document.createElementNS("http://www.w3.org/2000/svg",'path'),
+        mouth = document.createElementNS("http://www.w3.org/2000/svg",'rect'),
+        hands = document.createElementNS("http://www.w3.org/2000/svg",'rect'),
+        body = document.createElementNS("http://www.w3.org/2000/svg",'rect'),
+        logo = document.createElementNS("http://www.w3.org/2000/svg",'rect'),
+        legs = document.createElementNS("http://www.w3.org/2000/svg",'polyline'),
         name = document.createElement('p');
     //Add containers
     div.classList.add('char');
@@ -258,12 +259,12 @@
     legs.setAttribute('points','33.33333,200 33.33333,130 66.66666,130 66.66666,200');
 
     //Set user's styles
-    /*if (el.hair) {
+    if (el.hair) {
       hair.style.fill = el.hair;
     }
     if (el.logo) {
       logo.style.fill = el.logo;
-    }*/
+    }
 
     //Add to svg container
     svg.appendChild(head);
