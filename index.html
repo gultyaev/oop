@@ -292,9 +292,21 @@
   document.querySelector('.isName').addEventListener('click', function () {
     let el = document.querySelector('.setName');
     if (this.checked) {
+      let name = document.querySelector('.name');
       el.style.visibility = "visible";
+      name.addEventListener('change', function () {
+        if (name.value) {
+          document.querySelector('.char-name').innerHTML = name.value;
+        } else {
+          document.querySelector('.char-name').innerHTML = "Default";
+        }
+      });
+      if (name.value) {
+        document.querySelector('.char-name').innerHTML = name.value;
+      }
     } else {
       el.style.visibility = "hidden";
+      document.querySelector('.char-name').innerHTML = "Default";
     }
   });
 
@@ -303,8 +315,10 @@
     let hair = document.querySelector('.inp-hair');
     if (this.checked) {
       hair.style.visibility = "visible";
+      document.querySelector('.char-hair').style.fill = hairColor;
     } else {
       hair.style.visibility = "hidden";
+      document.querySelector('.char-hair').style.fill = "yellow";
     }
   });
 
